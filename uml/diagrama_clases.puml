@@ -1,6 +1,6 @@
 @startuml diagrama_clases.svg
 
-' Definición de enumerados
+' Enumeraciones
 enum TipoCoche {
     SEDAN
     SUV
@@ -43,7 +43,7 @@ class Persona {
     + int getEdad()
 }
 
-' Jerarquía de vehículos
+' Subclases de Vehiculo
 class Coche extends Vehiculo {
     - int numPuertas
     - TipoCoche tipo
@@ -90,7 +90,7 @@ class MotoDeportiva extends Moto {
     + double calcularDepreciacion()
 }
 
-' Relaciones
+' Relación de composición
 Vehiculo "1" *-- "0..1" Persona : propietario
 
 @enduml
