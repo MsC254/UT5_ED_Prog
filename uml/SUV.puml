@@ -1,7 +1,7 @@
 @startuml
-class SUV {
-  - boolean tieneTraccionIntegral
-
-  + void activarTraccionIntegral()
+class SUV extends Coche {
+    - boolean traccion4x4
+    - double alturaSuspension
+    + double calcularDepreciacion()
 }
 @enduml

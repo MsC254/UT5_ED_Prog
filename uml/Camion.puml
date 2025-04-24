@@ -1,9 +1,7 @@
 @startuml
-class Camion {
-  - double capacidadCarga
-  - int numeroEjes
-
-  + void cargar()
-  + void descargar()
+class Camion extends Vehiculo {
+    - double capacidadCarga
+    - int ejes
+    + double calcularDepreciacion()
 }
 @enduml

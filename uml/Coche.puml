@@ -1,9 +1,13 @@
 @startuml
-class Coche {
-  - String tipoCarroceria
-  - boolean traccion4Ruedas
+class Coche extends Vehiculo {
+    - int numPuertas
+    - TipoCoche tipo
+    + double calcularDepreciacion()
+}
 
-  + void arrancar()
-  + void frenar()
+enum TipoCoche {
+    SEDAN
+    SUV
+    DEPORTIVO
 }
 @enduml

@@ -1,8 +1,6 @@
 @startuml
-class MotoDeportiva {
-  - double potenciaMotor
-
-  + void acelerar()
-  + void frenar()
+class MotoDeportiva extends Moto {
+    - boolean carenado
+    + double calcularDepreciacion()
 }
 @enduml

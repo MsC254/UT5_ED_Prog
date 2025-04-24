@@ -1,7 +1,6 @@
 @startuml
-class Scooter {
-  - boolean tieneCasco
-
-  + void arrancarMotor()
+class Scooter extends Moto {
+    - boolean maletin
+    + double calcularDepreciacion()
 }
 @enduml

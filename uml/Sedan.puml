@@ -1,7 +1,8 @@
 @startuml
-class Sedan {
-  - int numeroPuertas
 
-  + void abrirMaletero()
+class Sedan extends Coche {
+    - boolean maleteroGrande
+    + double calcularDepreciacion()
 }
+
 @enduml

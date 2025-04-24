@@ -1,9 +1,12 @@
 @startuml
-class Moto {
-  - String tipoMoto
-  - boolean tieneMaletero
+class Moto extends Vehiculo {
+    - int cilindrada
+    - TipoMoto tipo
+    + double calcularDepreciacion()
+}
 
-  + void arrancar()
-  + void frenar()
+enum TipoMoto {
+    SCOOTER
+    DEPORTIVA
 }
 @enduml

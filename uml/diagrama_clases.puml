@@ -1,92 +1,96 @@
-@startuml uml/diagrama_clases.svg
+@startuml diagrama_clases.svg
 
-abstract class Vehiculo {
-  - String matricula
-  - String marca
-  - String modelo
-  - double kilometraje
-  - double precio
+' Definición de enumerados
+enum TipoCoche {
+    SEDAN
+    SUV
+    DEPORTIVO
 }
 
-class Persona {
-  - String nombre
-  - String apellidos
-  - String dni
-  - int anioNacimiento
-  - LocalDate fechaCaducidadCarnet
-
-  + boolean validarDNI()
+enum TipoMoto {
+    SCOOTER
+    DEPORTIVA
 }
 
-class Coche {
-  - String tipoCarroceria
-  - boolean traccion4Ruedas
-
-  + void arrancar()
-  + void frenar()
-}
-
-class Moto {
-  - String tipoMoto
-  - boolean tieneMaletero
-
-  + void arrancar()
-  + void frenar()
-}
-
-class Camion {
-  - double capacidadCarga
-  - int numeroEjes
-
-  + void cargar()
-  + void descargar()
-}
-
-class SUV {
-  - boolean tieneTraccionIntegral
-
-  + void activarTraccionIntegral()
-}
-
-class Sedan {
-  - int numeroPuertas
-
-  + void abrirMaletero()
-}
-
-class Deportivo {
-  - double velocidadMaxima
-
-  + void acelerar()
-  + void frenar()
-}
-
-class Scooter {
-  - boolean tieneCasco
-
-  + void arrancarMotor()
-}
-
-class MotoDeportiva {
-  - double potenciaMotor
-
-  + void acelerar()
-  + void frenar()
-}
-
+' Interfaz
 interface Valorable {
-  + double calcularDepreciacion()
+    + {abstract} double calcularDepreciacion()
 }
 
-Vehiculo <|-- Coche
-Vehiculo <|-- Moto
-Vehiculo <|-- Camion
-Coche <|-- SUV
-Coche <|-- Sedan
-Coche <|-- Deportivo
-Moto <|-- Scooter
-Moto <|-- MotoDeportiva
-Vehiculo "1" o-- "0..1" Persona : propietario
-Vehiculo ..|> Valorable
+' Clase abstracta
+abstract class Vehiculo implements Valorable {
+    - {final} String matricula
+    - String marca
+    - String modelo
+    - int kilometraje
+    - double precio
+    - LocalDate fechaFabricacion
+    - Persona propietario
+    + {abstract} double calcularDepreciacion()
+    + double calcularRiesgo(int experienciaConductor)
+    + String getMatricula()
+    + void setPropietario(Persona propietario)
+}
+
+' Clase Persona
+class Persona {
+    - String nombre
+    - String apellidos
+    - String dni
+    - int añoNacimiento
+    - LocalDate fechaCaducidadCarnet
+    + boolean validarDNI()
+    + int getEdad()
+}
+
+' Jerarquía de vehículos
+class Coche extends Vehiculo {
+    - int numPuertas
+    - TipoCoche tipo
+    + double calcularDepreciacion()
+}
+
+class Moto extends Vehiculo {
+    - int cilindrada
+    - TipoMoto tipo
+    + double calcularDepreciacion()
+}
+
+class Camion extends Vehiculo {
+    - double capacidadCarga
+    - int ejes
+    + double calcularDepreciacion()
+}
+
+' Subtipos de Coche
+class SUV extends Coche {
+    - boolean traccion4x4
+    - double alturaSuspension
+    + double calcularDepreciacion()
+}
+
+class Sedan extends Coche {
+    - boolean maleteroGrande
+    + double calcularDepreciacion()
+}
+
+class Deportivo extends Coche {
+    - double aceleracion0a100
+    + double calcularDepreciacion()
+}
+
+' Subtipos de Moto
+class Scooter extends Moto {
+    - boolean maletin
+    + double calcularDepreciacion()
+}
+
+class MotoDeportiva extends Moto {
+    - boolean carenado
+    + double calcularDepreciacion()
+}
+
+' Relaciones
+Vehiculo "1" *-- "0..1" Persona : propietario
 
 @enduml

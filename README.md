@@ -2,15 +2,18 @@
 
 ## Checklist
 
-- [x] Crear clases y relaciones en UML
-- [x] Añadir atributos, métodos y visibilidad en las clases
-- [x] Incluir la interfaz `Valorable` y su método
-- [x] Generar el diagrama `.svg` y actualizar el archivo `README.md`
-- [x] Subir los archivos al repositorio GitHub
-- [x] Verificar que el repositorio tiene la estructura correcta
+- [x] Crear estructura base del repositorio
+- [x] Modelar clase abstracta Vehículo
+- [x] Implementar subclases concretas (Coche, Moto, Camión)
+- [x] Crear subtipos específicos (Sedán, SUV, Deportivo, Scooter, Deportiva)
+- [x] Diseñar clase Persona con validación de DNI
+- [x] Establecer relación de composición entre Vehículo y Persona
+- [x] Implementar interfaz Valorable
+- [x] Añadir método de cálculo de riesgo
+- [x] Generar diagrama UML en formato SVG
+- [ ] (Opcional) Implementar código Java correspondiente
 
-## Diagrama de Clases
+## Diagrama de clases
 
 ![Diagrama de clases](uml/diagrama_clases.svg)
-
 

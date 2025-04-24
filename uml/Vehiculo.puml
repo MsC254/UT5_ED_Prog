@@ -1,9 +1,15 @@
 @startuml
 abstract class Vehiculo {
-  - String matricula
-  - String marca
-  - String modelo
-  - double kilometraje
-  - double precio
+    - {final} String matricula
+    - String marca
+    - String modelo
+    - int kilometraje
+    - double precio
+    - LocalDate fechaFabricacion
+    - Persona propietario
+    + {abstract} double calcularDepreciacion()
+    + double calcularRiesgo(int experienciaConductor)
+    + String getMatricula()
+    + void setPropietario(Persona propietario)
 }
 @enduml

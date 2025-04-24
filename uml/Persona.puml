@@ -1,11 +1,11 @@
 @startuml
 class Persona {
-  - String nombre
-  - String apellidos
-  - String dni
-  - int anioNacimiento
-  - LocalDate fechaCaducidadCarnet
-
-  + boolean validarDNI()
+    - String nombre
+    - String apellidos
+    - String dni
+    - int añoNacimiento
+    - LocalDate fechaCaducidadCarnet
+    + boolean validarDNI()
+    + int getEdad()
 }
 @enduml

@@ -1,8 +1,8 @@
 @startuml
-class Deportivo {
-  - double velocidadMaxima
 
-  + void acelerar()
-  + void frenar()
+class Deportivo extends Coche {
+    - double aceleracion0a100
+    + double calcularDepreciacion()
 }
+
 @enduml

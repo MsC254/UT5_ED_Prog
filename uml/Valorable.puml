@@ -1,5 +1,5 @@
 @startuml
 interface Valorable {
-  + double calcularDepreciacion()
+    + {abstract} double calcularDepreciacion()
 }
 @enduml
