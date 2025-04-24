@@ -1,0 +1,9 @@
+@startuml
+class Moto {
+  - String tipoMoto
+  - boolean tieneMaletero
+
+  + void arrancar()
+  + void frenar()
+}
+@enduml

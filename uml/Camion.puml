@@ -1,0 +1,9 @@
+@startuml
+class Camion {
+  - double capacidadCarga
+  - int numeroEjes
+
+  + void cargar()
+  + void descargar()
+}
+@enduml

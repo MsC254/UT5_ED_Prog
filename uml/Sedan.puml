@@ -1,0 +1,7 @@
+@startuml
+class Sedan {
+  - int numeroPuertas
+
+  + void abrirMaletero()
+}
+@enduml

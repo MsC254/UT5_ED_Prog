@@ -1,0 +1,9 @@
+@startuml
+class Coche {
+  - String tipoCarroceria
+  - boolean traccion4Ruedas
+
+  + void arrancar()
+  + void frenar()
+}
+@enduml

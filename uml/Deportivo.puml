@@ -1,0 +1,8 @@
+@startuml
+class Deportivo {
+  - double velocidadMaxima
+
+  + void acelerar()
+  + void frenar()
+}
+@enduml

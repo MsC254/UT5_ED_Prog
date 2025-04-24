@@ -1,0 +1,92 @@
+@startuml uml/diagrama_clases.svg
+
+abstract class Vehiculo {
+  - String matricula
+  - String marca
+  - String modelo
+  - double kilometraje
+  - double precio
+}
+
+class Persona {
+  - String nombre
+  - String apellidos
+  - String dni
+  - int anioNacimiento
+  - LocalDate fechaCaducidadCarnet
+
+  + boolean validarDNI()
+}
+
+class Coche {
+  - String tipoCarroceria
+  - boolean traccion4Ruedas
+
+  + void arrancar()
+  + void frenar()
+}
+
+class Moto {
+  - String tipoMoto
+  - boolean tieneMaletero
+
+  + void arrancar()
+  + void frenar()
+}
+
+class Camion {
+  - double capacidadCarga
+  - int numeroEjes
+
+  + void cargar()
+  + void descargar()
+}
+
+class SUV {
+  - boolean tieneTraccionIntegral
+
+  + void activarTraccionIntegral()
+}
+
+class Sedan {
+  - int numeroPuertas
+
+  + void abrirMaletero()
+}
+
+class Deportivo {
+  - double velocidadMaxima
+
+  + void acelerar()
+  + void frenar()
+}
+
+class Scooter {
+  - boolean tieneCasco
+
+  + void arrancarMotor()
+}
+
+class MotoDeportiva {
+  - double potenciaMotor
+
+  + void acelerar()
+  + void frenar()
+}
+
+interface Valorable {
+  + double calcularDepreciacion()
+}
+
+Vehiculo <|-- Coche
+Vehiculo <|-- Moto
+Vehiculo <|-- Camion
+Coche <|-- SUV
+Coche <|-- Sedan
+Coche <|-- Deportivo
+Moto <|-- Scooter
+Moto <|-- MotoDeportiva
+Vehiculo "1" o-- "0..1" Persona : propietario
+Vehiculo ..|> Valorable
+
+@enduml

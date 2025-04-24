@@ -1,0 +1,9 @@
+@startuml
+abstract class Vehiculo {
+  - String matricula
+  - String marca
+  - String modelo
+  - double kilometraje
+  - double precio
+}
+@enduml

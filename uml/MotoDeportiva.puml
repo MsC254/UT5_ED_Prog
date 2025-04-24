@@ -1,0 +1,8 @@
+@startuml
+class MotoDeportiva {
+  - double potenciaMotor
+
+  + void acelerar()
+  + void frenar()
+}
+@enduml
